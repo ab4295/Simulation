@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		FC154D1D2408DE6A00034A27 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FC154D1C2408DE6A00034A27 /* main.cpp */; };
+		FC154D252408DE8200034A27 /* glSetup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FC154D232408DE8200034A27 /* glSetup.cpp */; };
+		FC154D282408DECA00034A27 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC154D272408DECA00034A27 /* OpenGL.framework */; };
+		FC154D2A2408DEE700034A27 /* libglfw.3.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FC154D292408DEE700034A27 /* libglfw.3.3.dylib */; };
+		FC154D2C2408DEF400034A27 /* libGLEW.2.1.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FC154D2B2408DEF400034A27 /* libGLEW.2.1.0.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +29,11 @@
 /* Begin PBXFileReference section */
 		FC154D192408DE6A00034A27 /* CG_Lab_Simul_1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CG_Lab_Simul_1; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC154D1C2408DE6A00034A27 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		FC154D232408DE8200034A27 /* glSetup.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = glSetup.cpp; sourceTree = "<group>"; };
+		FC154D242408DE8200034A27 /* glSetup.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = glSetup.hpp; sourceTree = "<group>"; };
+		FC154D272408DECA00034A27 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		FC154D292408DEE700034A27 /* libglfw.3.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.3.dylib; path = ../../../../usr/local/Cellar/glfw/3.3/lib/libglfw.3.3.dylib; sourceTree = "<group>"; };
+		FC154D2B2408DEF400034A27 /* libGLEW.2.1.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.2.1.0.dylib; path = ../../../../usr/local/Cellar/glew/2.1.0/lib/libGLEW.2.1.0.dylib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +41,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC154D2C2408DEF400034A27 /* libGLEW.2.1.0.dylib in Frameworks */,
+				FC154D2A2408DEE700034A27 /* libglfw.3.3.dylib in Frameworks */,
+				FC154D282408DECA00034A27 /* OpenGL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +55,7 @@
 			children = (
 				FC154D1B2408DE6A00034A27 /* CG_Lab_Simul_1 */,
 				FC154D1A2408DE6A00034A27 /* Products */,
+				FC154D262408DECA00034A27 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,8 +71,20 @@
 			isa = PBXGroup;
 			children = (
 				FC154D1C2408DE6A00034A27 /* main.cpp */,
+				FC154D232408DE8200034A27 /* glSetup.cpp */,
+				FC154D242408DE8200034A27 /* glSetup.hpp */,
 			);
 			path = CG_Lab_Simul_1;
+			sourceTree = "<group>";
+		};
+		FC154D262408DECA00034A27 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FC154D2B2408DEF400034A27 /* libGLEW.2.1.0.dylib */,
+				FC154D292408DEE700034A27 /* libglfw.3.3.dylib */,
+				FC154D272408DECA00034A27 /* OpenGL.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -118,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC154D252408DE8200034A27 /* glSetup.cpp in Sources */,
 				FC154D1D2408DE6A00034A27 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -240,6 +266,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/Cellar/glfw/3.3/include,
+					/usr/local/Cellar/glew/2.1.0/include,
+					"/Users/songchang-yong/Downloads/eigen-3.3.7",
+					"/Users/songchang-yong/Downloads/glm",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/glfw/3.3/lib,
+					/usr/local/Cellar/glew/2.1.0/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -248,6 +285,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/Cellar/glfw/3.3/include,
+					/usr/local/Cellar/glew/2.1.0/include,
+					"/Users/songchang-yong/Downloads/eigen-3.3.7",
+					"/Users/songchang-yong/Downloads/glm",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/glfw/3.3/lib,
+					/usr/local/Cellar/glew/2.1.0/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
