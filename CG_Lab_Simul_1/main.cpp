@@ -61,7 +61,7 @@ float m = 0.1;
 int N_SUBSTEPS = 1;
 float useGravity = true;
 
-float k_r = 0.8; /* 탄성계수 바꾸기 */
+float k_r = 0.5; /* 탄성계수 바꾸기 */
 float epsilon = 1.0E-4;
 
 bool contact[meshVertex];
